@@ -1,89 +1,74 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Material</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
 
-<div class="mat-display-4">This is display 4</div>
-<div class="mat-display-3">This is display 3</div>
-<div class="mat-display-2">This is display 2</div>
-<div class="mat-display-1">This is display 1</div>
-<hr>
 
-<div class="mat-headline">This is a heading for h1</div>
-<div class="mat-title">This is a heading for h2</div>
-<div class="mat-subheading-2">This is a heading for h3</div>
-<div class="mat-subheading-1">This is a heading for h4</div>
-<hr>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav (opened)="log('Opened')" (closed)="log('Closed')" mode="side" [(opened)]="opened">
+    <mat-list dense>
+      <mat-list-item>Item 1</mat-list-item>
+      <mat-list-item>Item 2</mat-list-item>
+      <mat-list-item>Item 3</mat-list-item>
+    </mat-list>
 
-<div class="mat-body-1">This is body text</div>
-<div class="mat-body-2">This is bold body text</div>
-<div class="mat-caption">This is caption text</div>
-<hr>
+    <mat-nav-list dense>
+      <a mat-list-item href="#">Home</a>
+      <a mat-list-item href="#">About</a>
+      <a mat-list-item href="#">Services</a>
+    </mat-nav-list>
 
-<div class="mat-typography">
-  <h1>This is a heading for h1</h1>
-  <h2>This is a heading for h2</h2>
-  <h3>This is a heading for h3</h3>
-  <h4>This is a heading for h4</h4>
-</div>
-<hr>
+    <mat-list dense>
+      <mat-list-item>
+        <mat-icon matListIcon>home</mat-icon>
+        <h3 matLine>Heading</h3>  
+        <p matLine>Line</p>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <mat-icon matListIcon>folder</mat-icon>
+        <h3 matLine>Heading 2</h3>  
+        <p matLine>Line 2</p>
+      </mat-list-item>
+    </mat-list>
+    
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-icon (click)="opened =! opened">dehaze</mat-icon>
+    <!-- Main
+    <mat-button-toggle (click)="opened=!opened" >Toggle</mat-button-toggle>
+      <button (click)="sidenav.open()">Open</button>
+      <button (click)="sidenav.close()">Close</button>
+      <button (click)="sidenav.toggle()">Toggle</button> -->
 
-<div>
-  <button mat-button>Click</button>
-  <button mat-raised-button>Hello World</button>
-  <button mat-flat-button>Hello World</button>
-  <button mat-stroked-button>Hello World</button>
-</div>
-<hr>
+      <mat-menu #appMenu="matMenu" xPosition="after" yPosition="below">
+        <!-- xPosition can take values of before or after 
+             yPosition can take values of above or below -->
+        <button mat-menu-item [matMenuTriggerFor]="subMenu">FrontEnd</button>
+        <button mat-menu-item>BackEnd</button>
+      </mat-menu>
 
-<div>
-  <button mat-icon-button>Icon</button>
-  <button mat-fab>Fab</button>
-  <button mat-mini-fab>OX</button>
-</div>
-<hr>
+      <button mat-flat-button [matMenuTriggerFor]="appMenu">Menu</button>
+      <mat-menu #subMenu="matMenu">
+        <button mat-menu-item>Angular</button>
+        <button mat-menu-item>React</button>
+        <button mat-menu-item>Vue</button>
+      </mat-menu>
 
-<div>
-  <button mat-button color="primary">Primary</button>
-  <button mat-button color="accent">Accent</button>
-  <button mat-button disableRipple color="warn">Warn</button>
-  <button mat-raised-button color="primary">Primary</button>
-  <button mat-raised-button color="accent">Accent</button>
-  <button mat-raised-button color="warn">Warn</button>
-</div>
-<hr>
+      <mat-menu #lazyMenu="matMenu">
+        <ng-template matMenuContent let-name="name" let-hobby="hobby">
+          <button mat-menu-item>Settings</button>
+          <button mat-menu-item>Hobby is {{hobby}}</button>
+          <button mat-menu-item>Logout {{name}}</button>
+        </ng-template>
+      </mat-menu>
 
-<div>
-  <mat-button-toggle #toggleBtn checked disableRipple disabled>Toggle</mat-button-toggle>
-  {{ toggleBtn.checked }}
-</div>
-<hr>
+      <button mat-flat-button [matMenuTriggerData]="{name: 'Akshay', hobby: 'Programming'}"[matMenuTriggerFor]="lazyMenu">Akshay</button>
+      <button mat-flat-button [matMenuTriggerData]="{name: 'Lucky', hobby: 'Gaming'}" [matMenuTriggerFor]="lazyMenu">Lucky</button>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 
-<div>
-  <mat-button-toggle-group #toggleGroup="matButtonToggleGroup" multiple>
-    <mat-button-toggle value="angular" color="accent">Angular</mat-button-toggle>
-    <mat-button-toggle value="react">React</mat-button-toggle>
-    <mat-button-toggle value="vue">Vue</mat-button-toggle>
-  </mat-button-toggle-group>
-  {{ toggleGroup.value }}
-</div>
-<hr>
 
-<div>
-  <mat-icon color="primary">grade</mat-icon>
-</div>
-<hr>
-
-<div>
-  <span matBadge="5">Notifications</span>
-</div>
-
-<div>
-  <span matBadge="5" matBadgePosition="below before">Notifications</span>
-</div>
-
-<div>
-  <span matBadge="5" matBadgePosition="below after">Notifications</span>
-</div>
-
-<div>
-  <span matBadge="5" matBadgePosition="above before">Notifications</span>
-</div>
-<hr>
 
