@@ -1,0 +1,40 @@
+<div>
+    <button mat-button>Click</button>
+    <button mat-raised-button>Hello World</button>
+    <button mat-flat-button>Hello World</button>
+    <button mat-stroked-button>Hello World</button>
+  </div>
+  <mat-divider></mat-divider>
+  
+  <div>
+    <button mat-icon-button>Icon</button>
+    <button mat-fab>Fab</button>
+    <button mat-mini-fab>OX</button>
+  </div>
+  <mat-divider></mat-divider>
+  
+  <div>
+    <button mat-button color="primary">Primary</button>
+    <button mat-button color="accent">Accent</button>
+    <button mat-button disableRipple color="warn">Warn</button>
+    <button mat-raised-button color="primary">Primary</button>
+    <button mat-raised-button color="accent">Accent</button>
+    <button mat-raised-button color="warn">Warn</button>
+  </div>
+  <mat-divider></mat-divider>
+  
+  <div>
+    <mat-button-toggle #toggleBtn checked disableRipple disabled>Toggle</mat-button-toggle>
+    {{ toggleBtn.checked }}
+  </div>
+  <mat-divider></mat-divider>
+
+  
+  <div>
+    <mat-button-toggle-group #toggleGroup="matButtonToggleGroup" multiple>
+      <mat-button-toggle value="angular" color="accent">Angular</mat-button-toggle>
+      <mat-button-toggle value="react">React</mat-button-toggle>
+      <mat-button-toggle value="vue">Vue</mat-button-toggle>
+    </mat-button-toggle-group>
+    {{ toggleGroup.value }}
+  </div>

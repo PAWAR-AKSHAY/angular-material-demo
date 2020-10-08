@@ -1,0 +1,26 @@
+<div>
+<mat-menu #appMenu="matMenu" xPosition="after" yPosition="below">
+    <!-- xPosition can take values of before or after 
+         yPosition can take values of above or below -->
+    <button mat-menu-item [matMenuTriggerFor]="subMenu">FrontEnd</button>
+    <button mat-menu-item>BackEnd</button>
+  </mat-menu>
+
+  <button mat-flat-button [matMenuTriggerFor]="appMenu">Menu</button>
+  <mat-menu #subMenu="matMenu">
+    <button mat-menu-item>Angular</button>
+    <button mat-menu-item>React</button>
+    <button mat-menu-item>Vue</button>
+  </mat-menu>
+
+  <mat-menu #lazyMenu="matMenu">
+    <ng-template matMenuContent let-name="name" let-hobby="hobby">
+      <button mat-menu-item>Settings</button>
+      <button mat-menu-item>Hobby is {{hobby}}</button>
+      <button mat-menu-item>Logout {{name}}</button>
+    </ng-template>
+  </mat-menu>
+
+  <button mat-flat-button [matMenuTriggerData]="{name: 'Akshay', hobby: 'Programming'}"[matMenuTriggerFor]="lazyMenu">Akshay</button>
+  <button mat-flat-button [matMenuTriggerData]="{name: 'Lucky', hobby: 'Gaming'}" [matMenuTriggerFor]="lazyMenu">Lucky</button>
+</div>
