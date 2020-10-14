@@ -7,6 +7,11 @@
     padding-right: 1rem;
 } 
 
+.mat-toolbar.mat-primary {
+    background: #673ab7;
+    color: #fff;
+}
+
 .active {
     color: #039be5;
 }
@@ -20,8 +25,14 @@ mat-sidenav, mat-sidenav-content {
 }
 
 mat-sidenav {
-    background-color: lightcoral;
+    background-color: #fff;
+    color: rgba(0,0,0,.87);
     width: 200px;
+}
+
+mat-sidenav-content{
+    background-color: #e9e9e9;
+    color: rgba(0,0,0,.87);
 }
 
 .center {

@@ -1,0 +1,40 @@
+<div>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>Angular Material</mat-panel-title>
+            <mat-panel-description>Total Durations: 3 hours</mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>Material Design components for Angular</p>
+        <mat-action-row>
+            <button mat-button color="primary">Enroll</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+</div>
+
+<div>
+    <mat-accordion multi="true" hideToggle>
+        <!-- to open both panel use multi="true" in mat-accordion -->
+        <!-- to hide the toggle button use hideToggle -->
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>Angular Basics</mat-panel-title>
+                <mat-panel-description>Total Durations: 5 hours</mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>Angular Basics (Installation, Components, Directives, Typescript Basics, ...)</p>
+            <mat-action-row>
+                <button mat-button color="primary">Enroll</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>Angular Advanced</mat-panel-title>
+                <mat-panel-description>Total Durations: 15 hours</mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>Angular Advanced(Routing, Debugging, Lazy Loading, Pipes, ...)</p>
+            <mat-action-row>
+                <button mat-button color="primary">Enroll</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
