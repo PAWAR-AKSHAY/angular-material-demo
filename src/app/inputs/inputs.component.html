@@ -1,0 +1,263 @@
+<div>
+    <mat-form-field floatLabel="never" hideRequiredMarker appearance="legacy">
+        <!-- Possible values for floatLabel( never, always, auto ->(default)) -->
+        <!-- to hide required (*) use hideRequiredMarker attribute -->
+        <mat-label>Name</mat-label>
+        <input matInput required>
+        <mat-hint align="end">Min 5 characters</mat-hint>
+    </mat-form-field>
+    <br>
+    <mat-form-field floatLabel="auto" hideRequiredMarker appearance="standard">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Enter your name" required>
+        <mat-hint align="end">Min 5 characters</mat-hint>
+    </mat-form-field>
+    <br>
+    <mat-form-field floatLabel="auto" hideRequiredMarker appearance="fill" color="accent">
+        <mat-label>Name</mat-label>
+        <input matInput required>
+        <mat-hint align="end">Min 5 characters</mat-hint>
+    </mat-form-field>
+    <br>
+    <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline" color="warn">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" [(ngModel)]="value" required>
+        <button mat-button *ngIf="value" matSuffix mat-icon-button (click)="value=''">
+            <mat-icon>close</mat-icon>
+        </button>
+        <mat-hint align="end">Min 5 characters</mat-hint>
+    </mat-form-field>
+</div>
+
+
+<!-- <div>
+    <form class="example-form">
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Company (disabled)</mat-label>
+            <input matInput disabled value="Google">
+        </mat-form-field>
+
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>First Name</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </td>
+
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td>
+                   <mat-form-field class="example-full-width">
+                    <mat-label>Date of Birth</mat-label>
+                    <input matInput type="date">
+                   </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Contact</mat-label>
+                        <span matPrefix>+91 &nbsp;</span>
+                        <input matInput type="tel" placeholder="1234567890" maxlength="10">
+                        <mat-icon matSuffix>phone</mat-icon>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+
+    <mat-form-field class="example-full-width">
+        <input matInput #aadharNumber maxlength="12" placeholder="123456789000">
+        <mat-hint align="start"> We don't disclose your personal info</mat-hint>
+        <mat-hint align="end"> {{ aadharNumber.value.length }} / 12</mat-hint>
+    </mat-form-field>
+        
+       <p>
+        <mat-form-field class="example-full-width">
+            <mat-label>Address</mat-label>
+            <textarea matInput placeholder="Ex. 000 Main Rd.">111 Side Rd.</textarea>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Address 2</mat-label>
+            <textarea matInput></textarea>
+        </mat-form-field>
+       </p>
+
+       <table class="example-full-width">
+           <tr>
+               <td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>City</mat-label>
+                    <input matInput placeholder="Pune">
+                </mat-form-field>
+               </td>
+               <td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>State</mat-label>
+                    <input matInput placeholder="Maharashtra">
+                </mat-form-field>
+               </td>
+               <td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Zip Code</mat-label>
+                    <input matInput #zipCode maxlength="6" placeholder="411002">
+                    <mat-hint align="end">{{ zipCode.value.length}} / 6</mat-hint>
+                </mat-form-field>
+               </td>
+           </tr>
+       </table>
+
+    </form>
+</div> -->
+
+
+<div>
+    <mat-card class="example-card">
+        <mat-card-title style="text-align: center;">Form</mat-card-title>
+        <mat-card-content>
+            <form class="example-form">
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Company (disabled)</mat-label>
+                    <input matInput disabled value="Google">
+                </mat-form-field>
+        
+                <table class="example-full-width" cellspacing="0">
+                    <tr>
+                        <td>
+                            <mat-form-field appearance="fill" class="example-full-width">
+                                <mat-label>First Name</mat-label>
+                                <input matInput>
+                            </mat-form-field>
+                        </td>
+        
+                        <td>
+                            <mat-form-field appearance="fill" class="example-full-width">
+                                <mat-label>Last Name</mat-label>
+                                <input matInput>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                </table>
+        
+                <table class="example-full-width" cellspacing="0">
+                    <tr>
+                        <td>
+                           <mat-form-field appearance="fill" class="example-full-width">
+                            <mat-label>Date of Birth</mat-label>
+                            <input matInput type="date">
+                           </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field appearance="fill" class="example-full-width">
+                                <mat-label>Contact</mat-label>
+                                <!-- <span matPrefix>+91 &nbsp;</span> -->
+                                <input matInput type="tel" #contact placeholder="1234567890" maxlength="10">
+                                <mat-icon matSuffix>phone</mat-icon>
+                                <mat-hint align="end">{{ contact.value.length}} / 10</mat-hint>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class="example-full-width">
+                    <tr>
+                        <td> 
+                            <mat-form-field appearance="fill" class="example-full-width">
+                                <mat-label>Topic</mat-label>
+                                <mat-select [(value)]="selectedValue">
+                                    <mat-option>None</mat-option>
+                                    <mat-option value="angular">Angular</mat-option>
+                                    <mat-option value="react">React</mat-option>
+                                    <mat-option value="vue">Vue</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field appearance="fill" class="example-full-width">
+                                <mat-label>Language</mat-label>
+                                <mat-select [(value)]="selectedLanguage" multiple>
+                                    <mat-option>None</mat-option>
+                                    <mat-optgroup label="Backend">
+                                        <mat-option value="python">Python</mat-option>
+                                        <mat-option value="node.js">Node.js</mat-option>
+                                        <mat-option value="java">Java</mat-option>
+                                    </mat-optgroup>
+                                    <mat-optgroup label="Frontend">
+                                        <mat-option value="angular">Angular</mat-option>
+                                        <mat-option value="react">React</mat-option>
+                                        <mat-option value="vue">Vue</mat-option>
+                                    </mat-optgroup>
+                                </mat-select>
+                            </mat-form-field>
+                            <!-- {{ selectedLanguage }} -->
+                        </td>
+                    </tr>
+                </table>
+
+                <mat-form-field appearance="fill" class="example-full-width">
+                    <input type="text" matInput [matAutocomplete]="auto" [formControl]="myControl">
+                    <mat-autocomplete #auto="matAutocomplete" [displayWith] = "displayAuto">
+                        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                            {{ option }}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+        
+                <mat-form-field appearance="fill" class="example-full-width">
+                    <mat-label>Aaadhar Number</mat-label>
+                    <input matInput #aadharNumber maxlength="12" placeholder="123456789000">
+                    <mat-hint align="start"> We don't disclose your personal info</mat-hint>
+                    <mat-hint align="end"> {{ aadharNumber.value.length }} / 12</mat-hint>
+                </mat-form-field>
+                
+                <p>
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Address</mat-label>
+                        <textarea matInput placeholder="Ex. 000 Main Rd.">111 Side Rd.</textarea>
+                    </mat-form-field>
+            
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Address 2</mat-label>
+                        <textarea matInput></textarea>
+                    </mat-form-field>
+                </p>
+        
+                <table class="example-full-width">
+                    <tr>
+                        <td>
+                            <mat-form-field appearance="fill" class="example-full-width">
+                                <mat-label>City</mat-label>
+                                <input matInput placeholder="Pune">
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field appearance="fill" class="example-full-width">
+                                <mat-label>State</mat-label>
+                                <input matInput placeholder="Maharashtra">
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field appearance="fill" class="example-full-width">
+                                <mat-label>Zip Code</mat-label>
+                                <input matInput #zipCode maxlength="6" placeholder="411002">
+                                <mat-hint align="end">{{ zipCode.value.length}} / 6</mat-hint>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                </table>
+            
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
