@@ -23,6 +23,16 @@ export class InputsComponent implements OnInit {
   value = 'example';
   selectedValue: string;
   selectedLanguage: string;
+  favoriteFramework: string;
+  favoriteSeason: string;
+  seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
+  minDate = new Date();
+  maxDate = new Date(2020,9,20);
+  dateFilter = date => {
+    const day = date.getDay();
+    return day != 0 && day != 6
+  }
+  
 
   options: string[] = ['Angular', 'React', 'Vue'];
 

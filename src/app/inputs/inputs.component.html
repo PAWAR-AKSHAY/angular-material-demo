@@ -29,7 +29,6 @@
     </mat-form-field>
 </div>
 
-
 <!-- <div>
     <form class="example-form">
 
@@ -170,6 +169,65 @@
                     </tr>
                 </table>
 
+               
+                <mat-form-field style="margin-right: 12px;" color="warn" appearance="fill">
+                    <mat-label>Choose a Date</mat-label>
+                    <input matInput [matDatepicker]="myDatePicker">
+                    <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+                    <mat-datepicker #myDatePicker></mat-datepicker>
+                </mat-form-field>
+                
+                
+                <mat-form-field style="margin-right: 12px;" color="accent" appearance="fill">
+                    <mat-label>Min & Max Date</mat-label>
+                    <input matInput [matDatepicker]="myDatePickers" [min]="minDate" [max]="maxDate">
+                    <mat-datepicker-toggle [for]="myDatePickers" matSuffix></mat-datepicker-toggle>
+                    <mat-datepicker #myDatePickers></mat-datepicker>
+                </mat-form-field>
+                
+                <mat-form-field color="primary" appearance="fill">
+                    <mat-label>Filtered Date</mat-label>
+                    <input matInput [matDatepicker]="myDatePick"  [matDatepickerFilter]="dateFilter">
+                    <mat-datepicker-toggle [for]="myDatePick" matSuffix></mat-datepicker-toggle>
+                    <mat-datepicker #myDatePick></mat-datepicker>
+                </mat-form-field>
+
+                <table>
+                    <tr>
+                        <mat-label>Hobbies</mat-label>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-checkbox>
+                                Trekking
+                            </mat-checkbox>
+                        </td>
+                        <td>
+                            <mat-checkbox labelPosition="before">
+                                Gaming
+                            </mat-checkbox>
+                        </td>
+                        <td>
+                            <mat-checkbox color="primary" labelPosition="before">
+                                Reading
+                            </mat-checkbox>
+                        </td>
+                        <td>
+                            <mat-checkbox color="warn" labelPosition="before">
+                                Sports
+                            </mat-checkbox>
+                        </td>
+                    </tr>
+                </table>
+
+                <mat-radio-group [(ngModel)]="favoriteFramework" #radioGroup="matRadioGroup">
+                    <mat-radio-button value="angular" color="primary">Angular</mat-radio-button>
+                    <mat-radio-button value="react">React</mat-radio-button>
+                    <mat-radio-button value="vue" color="warn">Vue</mat-radio-button>
+                </mat-radio-group>
+                <p>Your favorite framework is : {{ favoriteFramework }}</p>
+
+                
                 <table class="example-full-width">
                     <tr>
                         <td> 

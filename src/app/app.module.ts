@@ -6,14 +6,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
-
+import { CustomSnackBarComponent } from './snack-bar/snack-bar.component';
+import { DialogContentComponent } from './dialog-content/dialog-content.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    CustomSnackBarComponent,
+    DialogContentComponent,
     routingComponents
+  ],
+  entryComponents: [
+    CustomSnackBarComponent,
+    DialogContentComponent
   ],
   imports: [
     BrowserModule,
@@ -21,6 +29,7 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    ScrollingModule,
     AppRoutingModule
   ],
   providers: [],

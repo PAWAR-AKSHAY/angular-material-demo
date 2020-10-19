@@ -38,3 +38,15 @@
     </mat-button-toggle-group>
     {{ toggleGroup.value }}
   </div>
+  <mat-divider></mat-divider>
+
+  <div>
+    <h3>Tooltip</h3>
+    <button mat-raised-button matTooltip="one" matTooltipPosition="below">1</button>
+    <button mat-raised-button matTooltip="two" matTooltipPosition="above">2</button>
+    <button mat-raised-button matTooltip="three" matTooltipPosition="left">3</button>
+    <button mat-raised-button matTooltip="four" matToolTipPosition="right">4</button>
+    <button mat-raised-button matTooltip="five" matToolTipPosition="right" matTooltipShowDelay="2000" matTooltipHideDelay="2000">5</button>
+
+    <mat-icon matTooltip="backup" color="primary" [inline]="true" style="font-size: 30px;">backup</mat-icon>
+  </div>
